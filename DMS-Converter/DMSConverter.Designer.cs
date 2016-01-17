@@ -154,7 +154,7 @@
             this.gbDMS.Controls.Add(this.tbLongDeg);
             this.gbDMS.Location = new System.Drawing.Point(12, 12);
             this.gbDMS.Name = "gbDMS";
-            this.gbDMS.Size = new System.Drawing.Size(314, 105);
+            this.gbDMS.Size = new System.Drawing.Size(303, 105);
             this.gbDMS.TabIndex = 11;
             this.gbDMS.TabStop = false;
             this.gbDMS.Text = "DMS";
@@ -167,7 +167,7 @@
             this.gbDecimal.Controls.Add(this.labelDecLat);
             this.gbDecimal.Location = new System.Drawing.Point(12, 124);
             this.gbDecimal.Name = "gbDecimal";
-            this.gbDecimal.Size = new System.Drawing.Size(314, 77);
+            this.gbDecimal.Size = new System.Drawing.Size(303, 77);
             this.gbDecimal.TabIndex = 12;
             this.gbDecimal.TabStop = false;
             this.gbDecimal.Text = "Decimal";
@@ -198,7 +198,7 @@
             // labelDecLat
             // 
             this.labelDecLat.AutoSize = true;
-            this.labelDecLat.Location = new System.Drawing.Point(67, 22);
+            this.labelDecLat.Location = new System.Drawing.Point(61, 22);
             this.labelDecLat.Name = "labelDecLat";
             this.labelDecLat.Size = new System.Drawing.Size(45, 13);
             this.labelDecLat.TabIndex = 0;
@@ -243,7 +243,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Window;
-            this.ClientSize = new System.Drawing.Size(339, 256);
+            this.ClientSize = new System.Drawing.Size(327, 256);
             this.Controls.Add(this.rbDecimal);
             this.Controls.Add(this.rbDMS);
             this.Controls.Add(this.btnConvert);
