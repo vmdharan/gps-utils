@@ -25,6 +25,9 @@ namespace DMS_Converter
             {
                 try
                 {
+                    double latDec = 0.0;
+                    double longDec = 0.0;
+
                     // Get the latitude DMS.
                     int latDeg = Convert.ToInt32(tbLatDeg.Text);
                     int latMin = Convert.ToInt32(tbLatMin.Text);
@@ -35,9 +38,27 @@ namespace DMS_Converter
                     int longMin = Convert.ToInt32(tbLongMin.Text);
                     double longSec = Convert.ToDouble(tbLongSec.Text);
 
-                    // Convert latitude and longitude DMS into decimal.
-                    double latDec = latDeg + (latMin / 60.0) + (latSec / 3600.0);
-                    double longDec = longDeg + (longMin / 60.0) + (longSec / 3600.0);
+                    // Convert latitude DMS into decimal.
+                    if(latDeg >= 0)
+                    {
+                        latDec = latDeg + (latMin / 60.0) + (latSec / 3600.0);
+                    }
+                    // Conversion for negative latitude degrees.
+                    else
+                    {
+                        latDec = latDeg - (latMin / 60.0) - (latSec / 3600.0);
+                    }
+
+                    // Convert longitude DMS into decimal.
+                    if (longDeg >= 0)
+                    {
+                        longDec = longDeg + (longMin / 60.0) + (longSec / 3600.0);
+                    }
+                    // Conversion for negative longitude degrees.
+                    else
+                    {
+                        longDec = longDeg - (longMin / 60.0) - (longSec / 3600.0);
+                    }
 
                     tbLatDec.Text = latDec.ToString();
                     tbLongDec.Text = longDec.ToString();
@@ -56,15 +77,45 @@ namespace DMS_Converter
                     double latDec = Convert.ToDouble(tbLatDec.Text);
                     double longDec = Convert.ToDouble(tbLongDec.Text);
 
-                    int latDeg = (int) latDec;
-                    double latMin2 = (latDec - latDeg) * 60.0;
-                    int latMin = (int) latMin2;
-                    double latSec = (latMin2 - latMin) * 60.0;
+                    int latDeg, latMin;
+                    double latMin2, latSec;
 
-                    int longDeg = (int) longDec;
-                    double longMin2 = (longDec - longDeg) * 60.0;
-                    int longMin = (int) longMin2;
-                    double longSec = (longMin2 - longMin) * 60.0;
+                    int longDeg, longMin;
+                    double longMin2, longSec;
+
+                    // Positive conversion - latitude
+                    if(latDec >= 0)
+                    {
+                        latDeg = (int)latDec;
+                        latMin2 = (latDec - latDeg) * 60.0;
+                        latMin = (int)latMin2;
+                        latSec = (latMin2 - latMin) * 60.0;
+                    }
+                    // Negative conversion -latitude
+                    else
+                    {
+                        latDeg = (int)latDec;
+                        latMin2 = (latDec - latDeg) * -60.0;
+                        latMin = (int)latMin2;
+                        latSec = (latMin2 - latMin) * 60.0;
+                    }
+
+                    // Positive conversion - longitude
+                    if(longDec >= 0)
+                    {
+                        longDeg = (int)longDec;
+                        longMin2 = (longDec - longDeg) * 60.0;
+                        longMin = (int)longMin2;
+                        longSec = (longMin2 - longMin) * 60.0;
+                    }
+                    // Negative conversion - longitude
+                    else
+                    {
+                        longDeg = (int)longDec;
+                        longMin2 = (longDec - longDeg) * -60.0;
+                        longMin = (int)longMin2;
+                        longSec = (longMin2 - longMin) * 60.0;
+                    }
 
                     tbLatDeg.Text = latDeg.ToString();
                     tbLatMin.Text = latMin.ToString();
