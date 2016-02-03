@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace DMS_Converter
@@ -65,7 +58,8 @@ namespace DMS_Converter
                 }
                 catch (Exception ex)
                 {
-                    // Display exception.
+                    // Show exception message.
+                    MessageBox.Show(ex.Message);
                 }
             }
 
@@ -127,7 +121,8 @@ namespace DMS_Converter
                 }
                 catch (Exception ex)
                 {
-
+                    // Show exception message.
+                    MessageBox.Show(ex.Message);
                 }
             }
         }
