@@ -13,23 +13,33 @@ namespace DMS_Converter
         // Perform conversion.
         private void btnConvert_Click(object sender, EventArgs e)
         {
+            // Declare variables for decimal latitude and longitude.
+            double latDec = 0.0;
+            double longDec = 0.0;
+
+            // Declare variables for DMS latitude and longitude.
+            int latDeg = 0;
+            int latMin = 0;
+            double latSec = 0.0;
+
+            int longDeg = 0;
+            int longMin = 0;
+            double longSec = 0.0;
+
             // Convert based on Degrees-Minutes-Seconds.
-            if(rbDMS.Checked)
+            if (rbDMS.Checked)
             {
                 try
                 {
-                    double latDec = 0.0;
-                    double longDec = 0.0;
-
                     // Get the latitude DMS.
-                    int latDeg = Convert.ToInt32(tbLatDeg.Text);
-                    int latMin = Convert.ToInt32(tbLatMin.Text);
-                    double latSec = Convert.ToDouble(tbLatSec.Text);
+                    latDeg = Convert.ToInt32(tbLatDeg.Text);
+                    latMin = Convert.ToInt32(tbLatMin.Text);
+                    latSec = Convert.ToDouble(tbLatSec.Text);
 
                     // Get the longitude DMS.
-                    int longDeg = Convert.ToInt32(tbLongDeg.Text);
-                    int longMin = Convert.ToInt32(tbLongMin.Text);
-                    double longSec = Convert.ToDouble(tbLongSec.Text);
+                    longDeg = Convert.ToInt32(tbLongDeg.Text);
+                    longMin = Convert.ToInt32(tbLongMin.Text);
+                    longSec = Convert.ToDouble(tbLongSec.Text);
 
                     // Convert latitude DMS into decimal.
                     if(latDeg >= 0)
@@ -68,14 +78,11 @@ namespace DMS_Converter
             {
                 try
                 {
-                    double latDec = Convert.ToDouble(tbLatDec.Text);
-                    double longDec = Convert.ToDouble(tbLongDec.Text);
+                    latDec = Convert.ToDouble(tbLatDec.Text);
+                    longDec = Convert.ToDouble(tbLongDec.Text);
 
-                    int latDeg, latMin;
-                    double latMin2, latSec;
-
-                    int longDeg, longMin;
-                    double longMin2, longSec;
+                    double latMin2;
+                    double longMin2;
 
                     // Positive conversion - latitude
                     if(latDec >= 0)
