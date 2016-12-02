@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2" xmlns:gx="http://www.google.com/kml/ext/2.2" xmlns:kml="http://www.opengis.net/kml/2.2" xmlns:atom="http://www.w3.org/2005/Atom">
+<Document>
+<name>points.kml</name>
+<Placemark>
+<name>My coord</name>
+<Point>
+<coordinates>133.12345,-32.54321,0</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<name>My coord</name>
+<Point>
+<coordinates>133.2345,-32.4321,0</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<name>My coord</name>
+<Point>
+<coordinates>133.345,-32.321,0</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<name>My coord</name>
+<Point>
+<coordinates>133.45,-32.21,0</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<name>My coord</name>
+<Point>
+<coordinates>133.5,-32.1,0</coordinates>
+</Point>
+</Placemark>
+</Document>
+</kml>
