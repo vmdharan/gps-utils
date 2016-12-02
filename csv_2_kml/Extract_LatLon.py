@@ -20,4 +20,6 @@ while(coordinates != ''):
 
 print (str(i) + ' coordinates read from file.')
 
+sourceFile.close()
+
 
